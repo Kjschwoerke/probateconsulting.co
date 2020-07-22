@@ -1,0 +1,51 @@
+.headline-container {
+    width: 85%;
+}
+
+.headline-container h1 {
+    font-size: 2.5em;
+}
+
+.headline-container h2 {
+    font-size: 1em;
+}
+
+header nav ul li {
+    font-size: 1.5em;
+}
+
+.probate-timeline-title {
+    font-size: 1em;
+}
+
+.probate-timeline {
+    width: 99%;
+}
+
+#badge1 {
+    height: 100px;
+    margin-bottom: 1em;
+    margin-right: 0;
+}
+
+#real-estate-haus-logo {
+    width: 90%;
+    height: auto;
+    margin: 0em 1em;
+}
+
+#badge2 {
+    display: none;
+}
+
+.main-CPRES h3 p {
+    font-size: 1.35em;
+}
+
+.services-container p {
+    font-size: 1em;
+}
+
+footer {
+    font-size: .75em;
+}

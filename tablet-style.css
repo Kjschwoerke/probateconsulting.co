@@ -1,0 +1,25 @@
+.contact-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+#donna {
+    grid-row: 1/2;
+}
+
+#henderson {
+    grid-row: 2/3;
+}
+
+#nunez {
+    grid-row: 3/4;
+}
+
+.probate-timeline-title {
+    font-size: 1.5em;
+}
+
+.probate-timeline {
+    width: 95%;
+}

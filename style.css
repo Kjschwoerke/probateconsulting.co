@@ -1,0 +1,281 @@
+/* Declare Root and Font Variables for CSS file */
+:root {
+    --main-backgrnd-color: #f8f8f8;
+    --heading-text: #f8f8f8;
+    --page-div-color: #4D7BBC;
+    --page-div-color-alpha: #4d7bbca1;
+    --font-shadow: 1.25px 1.5px 3px #232325bb;
+    --logo-red: #FF0C1F; 
+    --layout-border: dotted orange 2px;
+    --montserrat: 'Montserrat', sans-serif;
+}
+/* Import the Custom Font Used in the logo and selected by Client */
+@font-face {
+    font-family: "bauhaus";
+    src: url("./Fonts/ITC - BauhausPro-Bold.otf");
+}
+/* ---------------------------------------------- */
+* {
+     /* Reset CSS */
+     box-sizing: border-box;
+     border: none;
+     outline: none;
+     margin: 0;
+     padding: 0;
+     /* --------- */
+}
+
+body {
+    background: var(--main-backgrnd-color);
+    height: 100%;
+    width: 100%;
+}
+
+/* Splash Page CSS */
+
+header {
+    background: black;
+    background-image: url("./Images/Office_72dpi.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    color: white;
+    height: 100vh;
+    width: 100%;
+    padding-top: 3em;
+}
+
+header nav {
+    position: absolute;
+    bottom: 0;
+    background: var(--page-div-color);
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    list-style-type: none;
+    font-family: 'bauhaus', Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    text-shadow: var(--font-shadow);
+    padding: 0.5em;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--heading-text);
+    border: solid transparent 3px;
+    padding: .25em;
+}
+
+header nav ul li a:hover {
+    border: solid var(--heading-text) 3px;
+    background: #ffffff34;
+    cursor: pointer;
+    padding: .25em;
+}
+
+.headline-container {
+    width: 65%;
+    background: var(--page-div-color-alpha);
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.headline-container h1 {
+    font-family: 'bauhaus', Arial, Helvetica, sans-serif;
+    font-size: 3.5em;
+    text-shadow: var(--font-shadow);
+}
+
+.headline-container h2 {
+    font-family: var(--montserrat);
+    font-size: 1.5em;
+    font-weight: 500;
+    text-shadow: var(--font-shadow);
+}
+
+/* Logos and Badges Section */
+
+.badge-logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    height: auto;
+    padding: 1em;
+}
+
+.badge-logo img {
+    height: 150px;
+    width: auto;
+    border: solid black 1px;
+}
+
+.badge-logo img:nth-child(2) {
+    height: 200px;
+    border: solid black 6px;
+}
+
+/* main info content section */
+
+.main-CPRES {
+    background: var(--page-div-color);
+}
+
+.main-CPRES p {
+    text-align: center;
+    color: var(--heading-text);
+    font-family: 'bauhaus', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: var(--font-shadow);
+    padding: 1em 3em;
+}
+
+.services-container {
+    text-align: center;
+    width: 95%;
+    margin: 1em auto;
+    padding: 1.5em;
+}
+
+.services-container p {
+    margin: 1.5em auto;
+    line-height: 1.5;
+    font-size: 1.5em;
+}
+
+.services-container p i {
+    color: grey;
+}
+
+.services-container p:first-child {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.services-container p:last-child {
+    margin-bottom: 0;
+}
+
+.probate-timeline-title {
+    width: 100%;
+    padding: .25em;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: solid 1px black;
+}
+
+.probate-timeline {
+    height: auto;
+    width: 65%;
+    margin:  1em auto;
+    background: white;
+    border: solid 1px black;
+}
+
+/* Contact Us Section */
+
+.our-specialists {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5em;
+    background: var(--page-div-color);
+    color: var(--main-backgrnd-color);
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'bauhaus', Arial, Helvetica, sans-serif;
+    text-shadow: var(--font-shadow);
+}
+
+.contact-us p {
+    font-family: var(--montserrat);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    margin: 1em auto;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.agent-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 350px;
+    text-align: center;
+    background: white;
+    border: solid 1px black;
+    margin: 1em 1em;    
+}
+
+.agent-card .name {
+    padding: .5em;
+}
+
+.agent-card .agent-name {
+    font-family: 'bauhaus', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+.agent-card p {
+    margin: 0;
+}
+
+.agent-card img {
+    height: 250px;
+    width: auto;
+    margin: 1em 0;;
+    border: solid black 1px;
+}
+
+.agent-card .phone {
+    background: var(--logo-red);
+    padding: 1.5em;
+    width: 100%;
+    color: var(--heading-text);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-shadow: var(--font-shadow);
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: white;
+    color: grey;
+    border-top: solid black 1px;
+    width: 100%;
+    padding: 1em;
+}
+
+@media only screen and (max-width: 780px) {
+    #badge1 {
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+
+    #badge2 {
+        display: none;
+    }
+}
