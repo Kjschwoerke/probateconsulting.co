@@ -154,13 +154,10 @@ header nav ul li a:hover {
     font-size: 1.5em;
 }
 
-.services-container p i {
-    color: grey;
-}
 
 .services-container p:first-child {
     margin-top: 0;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .services-container p:last-child {
@@ -172,15 +169,28 @@ header nav ul li a:hover {
     padding: .25em;
     font-size: 2em;
     text-align: center;
-    border-bottom: solid 1px black;
+    border-bottom: solid 3px var(--page-div-color);
 }
 
 .probate-timeline {
     height: auto;
-    width: 65%;
+    width: 85%;
     margin:  1em auto;
     background: white;
-    border: solid 1px black;
+    border: solid 5px var(--page-div-color);
+}
+
+.probate-timeline figure figcaption {
+    font-family: var(--montserrat);
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.probate-timeline figure figcaption p {
+    font-size: 12px;
 }
 
 /* Contact Us Section */
@@ -267,6 +277,7 @@ footer {
     border-top: solid black 1px;
     width: 100%;
     padding: 1em;
+    margin-bottom: 2em;
 }
 
 @media only screen and (max-width: 780px) {
@@ -278,4 +289,23 @@ footer {
     #badge2 {
         display: none;
     }
+}
+
+.returnTop {
+    display: none;
+}
+
+.returnTop-show {
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    text-align: center;
+    background: white;
+    color: grey;
+    border-top: solid black 1px;
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: 700;
 }
