@@ -131,7 +131,7 @@ header nav ul li a:hover {
     background: var(--page-div-color);
 }
 
-.main-CPRES p {
+.main-CPRES h3 {
     text-align: center;
     color: var(--heading-text);
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
