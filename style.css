@@ -2,10 +2,12 @@
 :root {
     --main-backgrnd-color: #f8f8f8;
     --heading-text: #f8f8f8;
-    --page-div-color: #4D7BBC;
-    --page-div-color-alpha: #4d7bbca1;
+    --page-div-color: #2c4d7c;
+    --card-icon-color: #7098cf;
+    --page-div-color-alpha: #2c4d7cc4;
     --font-shadow: 1.25px 1.5px 3px #232325bb;
     --logo-red: #FF0C1F; 
+    --logo-redAAA: #B3000F; 
     --layout-border: dotted orange 2px;
     --montserrat: 'Montserrat', sans-serif;
 }
@@ -66,6 +68,7 @@ header nav ul li {
     text-shadow: var(--font-shadow);
     padding: 0.5em;
     margin: 0;
+    font-weight: 700;
 }
 
 header nav ul li a {
@@ -82,6 +85,13 @@ header nav ul li a:hover {
     padding: .25em;
 }
 
+header nav ul li a:focus {
+    border: solid var(--heading-text) 3px;
+    background: #ffffff34;
+    cursor: pointer;
+    padding: .25em;
+}
+
 .headline-container {
     width: 75%;
     background: var(--page-div-color-alpha); 
@@ -92,15 +102,20 @@ header nav ul li a:hover {
 
 .headline-container h1 {
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
-    font-size: 3.5em;
+    font-size: 4em;
     text-shadow: var(--font-shadow);
 }
 
 .headline-container h2 {
     font-family: var(--montserrat);
-    font-size: 1.5em;
-    font-weight: 500;
+    font-size: 2em;
+    font-weight: 700;
     text-shadow: var(--font-shadow);
+}
+
+#home-icon {
+    font-size: 1.5em;
+    color:#180002;
 }
 
 /* Logos and Badges Section */
@@ -136,10 +151,10 @@ header nav ul li a:hover {
     text-align: center;
     color: var(--heading-text);
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 700;
     text-shadow: var(--font-shadow);
-    padding: 1em 3em;
+    padding: 0.5em;
 }
 
 .services-container {
@@ -149,52 +164,60 @@ header nav ul li a:hover {
     padding: 1.5em;
 }
 
-.services-container p {
-    margin: 1.5em auto;
+.services-container .services-container-text {
+    margin: 0 auto;
     line-height: 1.5;
     font-size: 1.5em;
 }
 
-
-.services-container p:first-child {
-    margin-top: 0;
-    /* font-weight: 700; */
-}
-
-.services-container p:last-child {
-    margin-bottom: 0;
-}
-
-.probate-timeline-title {
+.service-cards-container {
     width: 100%;
-    padding: .25em;
-    font-size: 2em;
-    text-align: center;
-    border-bottom: solid 3px var(--page-div-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1em 0;
 }
 
-.probate-timeline {
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     height: auto;
-    width: 85%;
-    margin:  1em auto 0.5em;
-    background: white;
-    border: solid 5px var(--page-div-color);
-}
-
-.probate-timeline figure figcaption {
-    font-family: var(--montserrat);
-    font-weight: 700;
-    font-style: italic;
+    width: 300px;
     text-align: center;
-    font-size: 2.25em;
-    padding: 1em;
-    border-top: solid 3px var(--page-div-color);
-    text-decoration: underline;
+    background: white;
+    border: solid 1px black;
+    margin: 1em;    
 }
 
-.probate-timeline figure figcaption p {
-    font-size: .75em;
-    text-decoration: none !important;
+.card-icon {
+    width: 100%;
+    font-size: 7em;
+    color: var(--card-icon-color);
+}
+
+.card-heading {
+    background: var(--page-div-color);
+    color: var(--heading-text);
+    width: 100%;
+    font-size: 1.75em;
+    font-family: 'bauhaus', Arial, Helvetica, sans-serif;
+    padding: 0.25em;
+}
+
+.card-text {
+    font-weight: 700;
+    padding:  0.5em 1em;
+    line-height: 1.5;
+}
+
+.sub-text {
+    background: var(--page-div-color);
+    color: var(--heading-text);
+    font-weight: 500;
+    font-style: italic;
 }
 
 /* Contact Us Section */
@@ -217,6 +240,7 @@ header nav ul li a:hover {
     font-weight: 700;
     text-align: center;
     margin: 1em auto;
+    padding: 1em;
 }
 
 .contact-container {
@@ -233,11 +257,11 @@ header nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     height: auto;
-    width: 350px;
+    width: 360px;
     text-align: center;
     background: white;
     border: solid 1px black;
-    margin: 1em 1em;    
+    margin: 1em 1em 1em;    
 }
 
 .agent-card .name {
@@ -261,13 +285,40 @@ header nav ul li a:hover {
 }
 
 .agent-card .phone {
-    background: var(--logo-red);
-    padding: 1.5em;
+    background: var(--logo-redAAA);
+    padding: 1.5em 1.5em 0.25em;
     width: 100%;
     color: var(--heading-text);
     font-size: 1.5em;
     font-weight: 700;
     text-shadow: var(--font-shadow);
+}
+.agent-card .email {
+    background: var(--logo-redAAA);
+    width: 100%;
+    color: var(--heading-text);
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.25em 1.5em 1.5em;
+}
+
+.agent-card .email a {
+    color: var(--heading-text);
+}
+
+.agent-card .email a:hover {
+    border: solid var(--heading-text) 1px;
+    background: #ffffff34;
+    cursor: pointer;
+    padding: .25em;
+}
+
+.agent-card .email a:focus {
+    border: solid var(--heading-text) 1px;
+    background: var(--heading-text);
+    color: black;
+    cursor: pointer;
+    padding: .25em;
 }
 
 /* Footer */
@@ -277,22 +328,29 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     background: white;
-    color: grey;
+    color: black;
     border-top: solid black 1px;
     width: 100%;
     padding: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
-@media only screen and (max-width: 780px) {
-    #badge1 {
-        margin-bottom: 1em;
-        margin-right: 1em;
-    }
+#linkToRealEstateHaus {
+    padding: .25em;
+    text-decoration: none;
+    color: black;
+}
 
-    #badge2 {
-        display: none;
-    }
+#linkToRealEstateHaus:hover {
+    color: var(--logo-redAAA);
+    cursor: pointer;
+    padding: .25em;
+}
+
+#linkToRealEstateHaus:focus {
+    color: var(--logo-redAAA);
+    cursor: pointer;
+    padding: .25em;
 }
 
 .returnTop {
@@ -306,10 +364,134 @@ footer {
     bottom: 0;
     z-index: 1;
     text-align: center;
-    background: white;
-    color: grey;
-    border-top: solid black 1px;
+    background: #ffffff;
+    color: black;
     padding: 0.5em;
     font-size: 1em;
     font-weight: 700;
+    text-decoration: none;
+}
+
+.returnTop-show:hover {
+    color: var(--logo-redAAA);
+}
+
+.returnTop-show:focus {
+    color: var(--logo-redAAA);
+}
+
+#home-icon {
+    color: inherit;
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Media Queries*/
+
+@media only screen and (max-width: 1194px) {
+    .contact-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    .agent-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #donna {
+        grid-row: 1/2;
+    }
+    
+    #henderson {
+        grid-row: 2/3;
+    }
+    
+    #nunez {
+        grid-row: 3/4;
+    }
+    
+    .probate-timeline-title {
+        font-size: 1.5em;
+    }
+    
+}
+
+@media only screen and (max-width: 780px) {
+    #badge1 {
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+
+    #badge2 {
+        display: none;
+    }
+
+    footer {
+        font-size: .75em;
+        margin-bottom: 4em;
+        justify-content: center;
+        text-align: center;
+    }
+
+    footer p {
+       width: 100%;
+    }
+}
+
+@media only screen and (max-width: 573), (max-height: 400px) {
+    .headline-container {
+        width: 85%;
+    }
+    
+    .headline-container h1 {
+        font-size: 2.5em;
+    }
+    
+    .headline-container h2 {
+        font-size: 1em;
+    }
+    
+    header nav ul li {
+        font-size: 1.5em;
+    }
+    
+    #badge1 {
+        height: 100px;
+        margin-bottom: 1em;
+        margin-right: 0;
+    }
+    
+    #real-estate-haus-logo {
+        width: 90%;
+        height: auto;
+        margin: 0em 1em;
+    }
+    
+    #badge2 {
+        display: none;
+    }
+    
+    .main-CPRES h3 p {
+        font-size: 1.35em;
+    }
+    
+    .services-container p {
+        font-size: 1em;
+    }
+    
+    footer {
+        font-size: .75em;
+        margin-bottom: 4em;
+        justify-content: center;
+        text-align: center;
+    }
+
+    footer p {
+       width: 100%;
+    }
 }
