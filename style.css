@@ -1,11 +1,12 @@
 /* Declare Root and Font Variables for CSS file */
 :root {
     --main-backgrnd-color: #f8f8f8;
-    --heading-text: #f8f8f8;
+    --heading-text: #ffffff;
     --page-div-color: #2c4d7c;
     --card-icon-color: #7098cf;
     --page-div-color-alpha: #2c4d7cc4;
     --font-shadow: 1.25px 1.5px 3px #232325bb;
+    --card-shadow: 3px 3px 5px #31353b38;
     --logo-red: #FF0C1F; 
     --logo-redAAA: #B3000F; 
     --layout-border: dotted orange 2px;
@@ -42,6 +43,7 @@ header {
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover; 
+    background-clip: border-box;
     color: white;
     height: 100vh;
     width: 100%;
@@ -58,6 +60,7 @@ header nav {
 header nav ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -66,6 +69,8 @@ header nav ul li {
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
     font-size: 2.5em;
     text-shadow: var(--font-shadow);
+    text-align: center;
+    white-space: nowrap;
     padding: 0.5em;
     margin: 0;
     font-weight: 700;
@@ -102,7 +107,7 @@ header nav ul li a:focus {
 
 .headline-container h1 {
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
-    font-size: 4em;
+    font-size: calc(2em + 3vh);
     text-shadow: var(--font-shadow);
 }
 
@@ -188,7 +193,9 @@ header nav ul li a:focus {
     width: 300px;
     text-align: center;
     background: white;
-    border: solid 1px black;
+    /* border: solid 1px black; */
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
     margin: 1em;    
 }
 
@@ -218,6 +225,8 @@ header nav ul li a:focus {
     color: var(--heading-text);
     font-weight: 500;
     font-style: italic;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* Contact Us Section */
@@ -260,7 +269,9 @@ header nav ul li a:focus {
     width: 360px;
     text-align: center;
     background: white;
-    border: solid 1px black;
+    /* border: solid 1px black; */
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
     margin: 1em 1em 1em;    
 }
 
@@ -280,8 +291,9 @@ header nav ul li a:focus {
 .agent-card img {
     height: 250px;
     width: auto;
-    margin: 1em 0;;
-    border: solid black 1px;
+    margin: 1em 0;
+    /* border: solid black 1px; */
+    border-radius: 5px;
 }
 
 .agent-card .phone {
@@ -300,6 +312,8 @@ header nav ul li a:focus {
     font-size: 1em;
     font-weight: 700;
     padding: 0.25em 1.5em 1.5em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .agent-card .email a {
@@ -392,6 +406,18 @@ footer {
 /*Media Queries*/
 
 @media only screen and (max-width: 1194px) {
+    nav ul li a {
+        font-size: calc(.5em + 3vw)
+    }
+
+    .headline-container h1 {
+       font-size: calc(1em + 3vh);
+    }
+
+    .headline-container h2 {
+        font-size: calc(.75em + 1vh);
+    }
+
     .contact-container {
         display: grid;
         grid-template-columns: auto;
@@ -422,6 +448,12 @@ footer {
 }
 
 @media only screen and (max-width: 780px) {
+    .badge-logo {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
     #badge1 {
         margin-bottom: 1em;
         margin-right: 1em;
