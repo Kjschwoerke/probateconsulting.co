@@ -103,12 +103,14 @@ header nav ul li a:focus {
     text-align: center;
     margin: 0 auto;
     padding: 1em;
+    border-radius: 10px;
 }
 
 .headline-container h1 {
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
     font-size: calc(2em + 3vh);
     text-shadow: var(--font-shadow);
+    letter-spacing: 1.5px;
 }
 
 .headline-container h2 {
@@ -160,6 +162,7 @@ header nav ul li a:focus {
     font-weight: 700;
     text-shadow: var(--font-shadow);
     padding: 0.5em;
+    letter-spacing: 1.5px;
 }
 
 .services-container {
@@ -212,6 +215,7 @@ header nav ul li a:focus {
     font-size: 1.75em;
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
     padding: 0.25em;
+    letter-spacing: 1.5px;
 }
 
 .card-text {
@@ -241,6 +245,7 @@ header nav ul li a:focus {
     font-size: 2.5em;
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
     text-shadow: var(--font-shadow);
+    letter-spacing: 1.5px;
 }
 
 .contact-us p {
@@ -293,7 +298,7 @@ header nav ul li a:focus {
     width: auto;
     margin: 1em 0;
     /* border: solid black 1px; */
-    border-radius: 5px;
+    border-radius: 50%;
 }
 
 .agent-card .phone {
