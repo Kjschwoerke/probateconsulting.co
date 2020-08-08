@@ -115,7 +115,7 @@ header nav ul li a:focus {
 
 .headline-container h2 {
     font-family: var(--montserrat);
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 700;
     text-shadow: var(--font-shadow);
 }
@@ -236,6 +236,8 @@ header nav ul li a:focus {
 /* Contact Us Section */
 
 .our-specialists {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin: 0 auto;
     padding: 0.5em;
@@ -271,10 +273,13 @@ header nav ul li a:focus {
     justify-content: space-between;
     align-items: center;
     height: auto;
-    width: 360px;
+    width: 300px;
     text-align: center;
     background: white;
     /* border: solid 1px black; */
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    margin: 1em;    
     border-radius: 10px;
     box-shadow: var(--card-shadow);
     margin: 1em 1em 1em;    
@@ -293,30 +298,49 @@ header nav ul li a:focus {
     margin: 0;
 }
 
+.donnaTitle p {
+    margin: 0;
+    padding: 0;
+}
+
+.donnaTitle p:last-child {
+    font-size: 1.25em;
+}
+
 .agent-card img {
-    height: 250px;
+    height: 200px;
     width: auto;
     margin: 1em 0;
     /* border: solid black 1px; */
     border-radius: 50%;
 }
 
+.phoneEmailContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 15%
+}
+
 .agent-card .phone {
     background: var(--logo-redAAA);
     padding: 1.5em 1.5em 0.25em;
+    height: auto;
     width: 100%;
     color: var(--heading-text);
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: 700;
     text-shadow: var(--font-shadow);
 }
 .agent-card .email {
     background: var(--logo-redAAA);
+    height: auto;
     width: 100%;
     color: var(--heading-text);
     font-size: 1em;
     font-weight: 700;
-    padding: 0.25em 1.5em 1.5em;
+    padding: 1em 1.5em 1.5em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -411,9 +435,6 @@ footer {
 /*Media Queries*/
 
 @media only screen and (max-width: 1194px) {
-    nav ul li a {
-        font-size: calc(.5em + 3vw)
-    }
 
     .headline-container h1 {
        font-size: calc(1em + 3vh);
@@ -429,9 +450,14 @@ footer {
         grid-template-rows: auto auto auto;
     }
 
+    .contact-us p {
+        font-size: 1.25em;
+    }
+
     .agent-card {
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 4em;
     }
     
     #donna {
@@ -449,14 +475,33 @@ footer {
     .probate-timeline-title {
         font-size: 1.5em;
     }
-    
+
+    .services-container .services-container-text {
+        margin: 0 auto;
+        line-height: 1.5;
+        font-size: 1em;
+    }
 }
 
+
+
 @media only screen and (max-width: 780px) {
+
+    header nav ul li {
+        font-size: 1.5em;
+    }
+
     .badge-logo {
         flex-direction: column;
         align-content: center;
         align-items: center;
+    }
+
+    .badge-logo img:nth-child(2) {
+        height: auto;
+        border: solid black 6px;
+        width: 350px;
+        height: auto;
     }
 
     #badge1 {
@@ -480,7 +525,15 @@ footer {
     }
 }
 
+@media only screen and (max-width: 573px) {
+
+    header nav ul li {
+        font-size: 1.15em;
+    }
+}
+
 @media only screen and (max-width: 573), (max-height: 400px) {
+
     .headline-container {
         width: 85%;
     }
@@ -496,6 +549,7 @@ footer {
     header nav ul li {
         font-size: 1.5em;
     }
+
     
     #badge1 {
         height: 100px;
