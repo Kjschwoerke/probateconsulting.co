@@ -30,6 +30,11 @@
      font-family: var(--montserrat);
      /* --------- */
 }
+/* Force safari to retain original styling for phone numbers */
+a[href^=tel] {
+    text-decoration:inherit;
+    color: inherit;
+ }
 
 body {
     background: var(--main-backgrnd-color);
