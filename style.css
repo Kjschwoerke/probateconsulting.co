@@ -523,6 +523,7 @@ footer {
     }
 
     #badge1 {
+        height: auto;
         margin-bottom: 1em;
         margin-right: 1em;
     }
@@ -576,6 +577,7 @@ footer {
     
     #badge1 {
         height: 100px;
+        width: auto;
         margin-bottom: 1em;
         margin-right: 0;
     }
