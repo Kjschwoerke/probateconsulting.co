@@ -50,6 +50,7 @@ header {
     height: 100vh;
     width: 100%;
     padding-top: 3em;
+    overflow: hidden;
 }
 
 header nav {
@@ -449,7 +450,7 @@ footer {
 
 /*Media Queries*/
 
-@media only screen and (max-width: 1194px) {
+@media only screen and (max-width: 1194px), (min-width: 573px) {
 
     .headline-container h1 {
        font-size: calc(1em + 3vh + 1vw);
@@ -607,4 +608,43 @@ footer {
     footer p {
        width: 100%;
     }
+}
+
+@media only screen and (max-width: 572px) {
+    header .headline-container h1 {
+        font-size: 1.75em;
+        margin-bottom: 1em
+    }
+    header .headline-container h2 {
+        font-size: .75em;
+    }
+
+    header nav ul li a {
+        font-size: .75em;
+    }
+
+    #section-title{
+        font-size: 2rem;
+    }
+
+    #returnTop .icon-link {
+        font-size: 0.75rem;
+    }
+
+    #badge1 {
+        margin: 0;
+        width: 20%;
+        height: auto;
+    }
+
+    #real-estate-haus-logo {
+        width: 75%;
+        height: auto;
+        border: none;
+    }
+
+    .agent-card:last-child {
+        margin-bottom: 0em;
+    }
+
 }
