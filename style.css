@@ -455,7 +455,9 @@ footer {
 
 /*Media Queries*/
 
-@media only screen and (max-width: 1194px), (min-width: 573px) {
+
+/* , (min-width: 573px) */
+@media only screen and (max-width: 1194px) {
 
     .headline-container h1 {
        font-size: calc(1em + 3vh + 1vw);
@@ -522,7 +524,6 @@ footer {
 
     .badge-logo img:nth-child(2) {
         height: auto;
-        border: solid black 6px;
         width: 350px;
         height: auto;
     }
