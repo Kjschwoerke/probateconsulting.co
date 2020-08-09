@@ -1,5 +1,6 @@
 /* Declare Root and Font Variables for CSS file */
 :root {
+    
     --main-backgrnd-color: #f8f8f8;
     --heading-text: #ffffff;
     --page-div-color: #2c4d7c;
@@ -11,6 +12,7 @@
     --logo-redAAA: #B3000F; 
     --layout-border: dotted orange 2px;
     --montserrat: 'Montserrat', sans-serif;
+    
 }
 /* Import the Custom Font Used in the logo and selected by Client */
 @font-face {
@@ -85,6 +87,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
     border: solid var(--heading-text) 3px;
+    border-radius: 10px;
     background: #ffffff34;
     cursor: pointer;
     padding: .25em;
@@ -92,6 +95,7 @@ header nav ul li a:hover {
 
 header nav ul li a:focus {
     border: solid var(--heading-text) 3px;
+    border-radius: 10px;
     background: #ffffff34;
     cursor: pointer;
     padding: .25em;
@@ -131,21 +135,23 @@ header nav ul li a:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     height: auto;
     padding: 1em;
+    background: #ffffff;
 }
 
 .badge-logo img {
-    height: 150px;
-    width: auto;
-    border: solid black 1px;
+    height: auto;
+    width: 10%;
+    /* border: solid black 1px; */
 }
 
 .badge-logo img:nth-child(2) {
-    height: 200px;
-    border: solid black 6px;
+    height: auto;
+    width: 30%;
+    /* border: solid black 2px; */
 }
 
 /* main info content section */
@@ -242,7 +248,7 @@ header nav ul li a:focus {
     margin: 0 auto;
     padding: 0.5em;
     background: var(--logo-redAAA);
-    color: var(--main-backgrnd-color);
+    color: var(--heading-text);
     text-align: center;
     font-size: 2.5em;
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
@@ -298,6 +304,10 @@ header nav ul li a:focus {
     margin: 0;
 }
 
+.title {
+    color: #1d1b1b
+}
+
 .donnaTitle p {
     margin: 0;
     padding: 0;
@@ -311,7 +321,6 @@ header nav ul li a:focus {
     height: 200px;
     width: auto;
     margin: 1em 0;
-    /* border: solid black 1px; */
     border-radius: 50%;
 }
 
@@ -320,7 +329,7 @@ header nav ul li a:focus {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
-    height: 15%
+    height: 15%;
 }
 
 .agent-card .phone {
@@ -337,20 +346,25 @@ header nav ul li a:focus {
     background: var(--logo-redAAA);
     height: auto;
     width: 100%;
-    color: var(--heading-text);
     font-size: 1em;
     font-weight: 700;
-    padding: 1em 1.5em 1.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    
 }
 
 .agent-card .email a {
-    color: var(--heading-text);
+    color: #fbd0d0;
+    padding: .25em;
+    border: solid transparent 1px;
 }
 
 .agent-card .email a:hover {
+    color: white;
     border: solid var(--heading-text) 1px;
+    border-radius: 10px;
     background: #ffffff34;
     cursor: pointer;
     padding: .25em;
@@ -358,7 +372,8 @@ header nav ul li a:focus {
 
 .agent-card .email a:focus {
     border: solid var(--heading-text) 1px;
-    background: var(--heading-text);
+    border-radius: 10px;
+    background: #fbd0d0;
     color: black;
     cursor: pointer;
     padding: .25em;
@@ -437,16 +452,16 @@ footer {
 @media only screen and (max-width: 1194px) {
 
     .headline-container h1 {
-       font-size: calc(1em + 3vh);
+       font-size: calc(1em + 3vh + 1vw);
     }
 
     .headline-container h2 {
-        font-size: calc(.75em + 1vh);
+        font-size: calc(.75em + 1vh +1vw);
     }
 
     .contact-container {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 100%;
         grid-template-rows: auto auto auto;
     }
 
@@ -458,6 +473,8 @@ footer {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 4em;
+        height: auto;
+        width: 40%
     }
     
     #donna {
@@ -511,6 +528,11 @@ footer {
 
     #badge2 {
         display: none;
+    }
+
+    .agent-card {
+        width: 300px;
+        height: auto;
     }
 
     footer {
