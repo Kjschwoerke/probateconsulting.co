@@ -241,7 +241,7 @@ header nav ul li a:focus {
     width: 100%;
     margin: 0 auto;
     padding: 0.5em;
-    background: var(--page-div-color);
+    background: var(--logo-redAAA);
     color: var(--main-backgrnd-color);
     text-align: center;
     font-size: 2.5em;
