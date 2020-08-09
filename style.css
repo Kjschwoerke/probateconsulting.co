@@ -1,13 +1,18 @@
 /* Declare Root and Font Variables for CSS file */
 :root {
+    
     --main-backgrnd-color: #f8f8f8;
-    --heading-text: #f8f8f8;
-    --page-div-color: #4D7BBC;
-    --page-div-color-alpha: #4d7bbca1;
+    --heading-text: #ffffff;
+    --page-div-color: #2c4d7c;
+    --card-icon-color: #7098cf;
+    --page-div-color-alpha: #2c4d7cc4;
     --font-shadow: 1.25px 1.5px 3px #232325bb;
+    --card-shadow: 3px 3px 5px #31353b38;
     --logo-red: #FF0C1F; 
+    --logo-redAAA: #B3000F; 
     --layout-border: dotted orange 2px;
     --montserrat: 'Montserrat', sans-serif;
+    
 }
 /* Import the Custom Font Used in the logo and selected by Client */
 @font-face {
@@ -25,6 +30,11 @@
      font-family: var(--montserrat);
      /* --------- */
 }
+/* Force safari to retain original styling for phone numbers */
+a[href^=tel] {
+    text-decoration:inherit;
+    color: inherit;
+ }
 
 body {
     background: var(--main-backgrnd-color);
@@ -35,11 +45,13 @@ body {
 /* Splash Page CSS */
 
 header {
+    position: relative;
     background: black;
     background-image: url("./Images/Office_72dpi.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover; 
+    background-clip: border-box;
     color: white;
     height: 100vh;
     width: 100%;
@@ -56,6 +68,7 @@ header nav {
 header nav ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -64,8 +77,11 @@ header nav ul li {
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
     font-size: 2.5em;
     text-shadow: var(--font-shadow);
+    text-align: center;
+    white-space: nowrap;
     padding: 0.5em;
     margin: 0;
+    font-weight: 700;
 }
 
 header nav ul li a {
@@ -77,6 +93,15 @@ header nav ul li a {
 
 header nav ul li a:hover {
     border: solid var(--heading-text) 3px;
+    border-radius: 10px;
+    background: #ffffff34;
+    cursor: pointer;
+    padding: .25em;
+}
+
+header nav ul li a:focus {
+    border: solid var(--heading-text) 3px;
+    border-radius: 10px;
     background: #ffffff34;
     cursor: pointer;
     padding: .25em;
@@ -88,19 +113,26 @@ header nav ul li a:hover {
     text-align: center;
     margin: 0 auto;
     padding: 1em;
+    border-radius: 10px;
 }
 
 .headline-container h1 {
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
-    font-size: 3.5em;
+    font-size: calc(2em + 3vh);
     text-shadow: var(--font-shadow);
+    letter-spacing: 1.5px;
 }
 
 .headline-container h2 {
     font-family: var(--montserrat);
     font-size: 1.5em;
-    font-weight: 500;
+    font-weight: 700;
     text-shadow: var(--font-shadow);
+}
+
+#home-icon {
+    font-size: 1.5em;
+    color:#180002;
 }
 
 /* Logos and Badges Section */
@@ -109,21 +141,23 @@ header nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     height: auto;
     padding: 1em;
+    background: #ffffff;
 }
 
 .badge-logo img {
-    height: 150px;
-    width: auto;
-    border: solid black 1px;
+    height: auto;
+    width: 10%;
+    /* border: solid black 1px; */
 }
 
 .badge-logo img:nth-child(2) {
-    height: 200px;
-    border: solid black 6px;
+    height: auto;
+    width: 30%;
+    /* border: solid black 2px; */
 }
 
 /* main info content section */
@@ -136,10 +170,11 @@ header nav ul li a:hover {
     text-align: center;
     color: var(--heading-text);
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 700;
     text-shadow: var(--font-shadow);
-    padding: 1em 3em;
+    padding: 0.5em;
+    letter-spacing: 1.5px;
 }
 
 .services-container {
@@ -149,66 +184,82 @@ header nav ul li a:hover {
     padding: 1.5em;
 }
 
-.services-container p {
-    margin: 1.5em auto;
+.services-container .services-container-text {
+    margin: 0 auto;
     line-height: 1.5;
     font-size: 1.5em;
 }
 
-
-.services-container p:first-child {
-    margin-top: 0;
-    /* font-weight: 700; */
-}
-
-.services-container p:last-child {
-    margin-bottom: 0;
-}
-
-.probate-timeline-title {
+.service-cards-container {
     width: 100%;
-    padding: .25em;
-    font-size: 2em;
-    text-align: center;
-    border-bottom: solid 3px var(--page-div-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1em 0;
 }
 
-.probate-timeline {
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     height: auto;
-    width: 85%;
-    margin:  1em auto 0.5em;
-    background: white;
-    border: solid 5px var(--page-div-color);
-}
-
-.probate-timeline figure figcaption {
-    font-family: var(--montserrat);
-    font-weight: 700;
-    font-style: italic;
+    width: 300px;
     text-align: center;
-    font-size: 2.25em;
-    padding: 1em;
-    border-top: solid 3px var(--page-div-color);
-    text-decoration: underline;
+    background: white;
+    /* border: solid 1px black; */
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    margin: 1em;    
 }
 
-.probate-timeline figure figcaption p {
-    font-size: .75em;
-    text-decoration: none !important;
+.card-icon {
+    width: 100%;
+    font-size: 7em;
+    color: var(--card-icon-color);
+}
+
+.card-heading {
+    background: var(--page-div-color);
+    color: var(--heading-text);
+    width: 100%;
+    font-size: 1.75em;
+    font-family: 'bauhaus', Arial, Helvetica, sans-serif;
+    padding: 0.25em;
+    letter-spacing: 1.5px;
+}
+
+.card-text {
+    font-weight: 700;
+    padding:  0.5em 1em;
+    line-height: 1.5;
+}
+
+.sub-text {
+    background: var(--page-div-color);
+    color: var(--heading-text);
+    font-weight: 500;
+    font-style: italic;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* Contact Us Section */
 
 .our-specialists {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin: 0 auto;
     padding: 0.5em;
-    background: var(--page-div-color);
-    color: var(--main-backgrnd-color);
+    background: var(--logo-redAAA);
+    color: var(--heading-text);
     text-align: center;
     font-size: 2.5em;
     font-family: 'bauhaus', Arial, Helvetica, sans-serif;
     text-shadow: var(--font-shadow);
+    letter-spacing: 1.5px;
 }
 
 .contact-us p {
@@ -217,6 +268,7 @@ header nav ul li a:hover {
     font-weight: 700;
     text-align: center;
     margin: 1em auto;
+    padding: 1em;
 }
 
 .contact-container {
@@ -233,11 +285,16 @@ header nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     height: auto;
-    width: 350px;
+    width: 300px;
     text-align: center;
     background: white;
-    border: solid 1px black;
-    margin: 1em 1em;    
+    /* border: solid 1px black; */
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    margin: 1em;    
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    margin: 1em 1em 1em;    
 }
 
 .agent-card .name {
@@ -253,21 +310,79 @@ header nav ul li a:hover {
     margin: 0;
 }
 
+.title {
+    color: #1d1b1b
+}
+
+.donnaTitle p {
+    margin: 0;
+    padding: 0;
+}
+
+.donnaTitle p:last-child {
+    font-size: 1.25em;
+}
+
 .agent-card img {
-    height: 250px;
+    height: 200px;
     width: auto;
-    margin: 1em 0;;
-    border: solid black 1px;
+    margin: 1em 0;
+    border-radius: 50%;
+}
+
+.phoneEmailContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 15%;
 }
 
 .agent-card .phone {
-    background: var(--logo-red);
-    padding: 1.5em;
+    background: var(--logo-redAAA);
+    padding: 1.5em 1.5em 0.25em;
+    height: auto;
     width: 100%;
     color: var(--heading-text);
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: 700;
     text-shadow: var(--font-shadow);
+}
+.agent-card .email {
+    background: var(--logo-redAAA);
+    height: auto;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 700;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+.agent-card .email a {
+    color: #fbd0d0;
+    padding: .25em;
+    border: solid transparent 1px;
+}
+
+.agent-card .email a:hover {
+    color: white;
+    border: solid var(--heading-text) 1px;
+    border-radius: 10px;
+    background: #ffffff34;
+    cursor: pointer;
+    padding: .25em;
+}
+
+.agent-card .email a:focus {
+    border: solid var(--heading-text) 1px;
+    border-radius: 10px;
+    background: #fbd0d0;
+    color: black;
+    cursor: pointer;
+    padding: .25em;
 }
 
 /* Footer */
@@ -277,22 +392,29 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     background: white;
-    color: grey;
+    color: black;
     border-top: solid black 1px;
     width: 100%;
     padding: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
-@media only screen and (max-width: 780px) {
-    #badge1 {
-        margin-bottom: 1em;
-        margin-right: 1em;
-    }
+#linkToRealEstateHaus {
+    padding: .25em;
+    text-decoration: none;
+    color: black;
+}
 
-    #badge2 {
-        display: none;
-    }
+#linkToRealEstateHaus:hover {
+    color: var(--logo-redAAA);
+    cursor: pointer;
+    padding: .25em;
+}
+
+#linkToRealEstateHaus:focus {
+    color: var(--logo-redAAA);
+    cursor: pointer;
+    padding: .25em;
 }
 
 .returnTop {
@@ -306,10 +428,231 @@ footer {
     bottom: 0;
     z-index: 1;
     text-align: center;
-    background: white;
-    color: grey;
-    border-top: solid black 1px;
+    background: #ffffff;
+    color: black;
     padding: 0.5em;
     font-size: 1em;
     font-weight: 700;
+    text-decoration: none;
+}
+
+.returnTop-show:hover {
+    color: var(--logo-redAAA);
+}
+
+.returnTop-show:focus {
+    color: var(--logo-redAAA);
+}
+
+#home-icon {
+    color: inherit;
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Media Queries*/
+
+
+/* , (min-width: 573px) */
+@media only screen and (max-width: 1194px) {
+
+    .headline-container h1 {
+       font-size: calc(1em + 3vh + 1vw);
+    }
+
+    .headline-container h2 {
+        font-size: calc(.75em + 1vh +1vw);
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+    }
+
+    .contact-us p {
+        font-size: 1.25em;
+    }
+
+    .agent-card {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4em;
+        height: auto;
+        width: 40%
+    }
+    
+    #donna {
+        grid-row: 1/2;
+    }
+    
+    #henderson {
+        grid-row: 2/3;
+    }
+    
+    #nunez {
+        grid-row: 3/4;
+    }
+    
+    .probate-timeline-title {
+        font-size: 1.5em;
+    }
+
+    .services-container .services-container-text {
+        margin: 0 auto;
+        line-height: 1.5;
+        font-size: 1em;
+    }
+}
+
+
+
+@media only screen and (max-width: 780px) {
+
+    header nav ul li {
+        font-size: 1.5em;
+    }
+
+    .badge-logo {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    .badge-logo img:nth-child(2) {
+        height: auto;
+        width: 350px;
+        height: auto;
+    }
+
+    #badge1 {
+        height: auto;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+
+    #badge2 {
+        display: none;
+    }
+
+    .agent-card {
+        width: 300px;
+        height: auto;
+    }
+
+    footer {
+        font-size: .75em;
+        margin-bottom: 4em;
+        justify-content: center;
+        text-align: center;
+    }
+
+    footer p {
+       width: 100%;
+    }
+}
+
+@media only screen and (max-width: 573px) {
+
+    header nav ul li {
+        font-size: 1.15em;
+    }
+}
+
+@media only screen and (max-width: 573), (max-height: 400px) {
+
+    .headline-container {
+        width: 85%;
+    }
+    
+    .headline-container h1 {
+        font-size: 2.5em;
+    }
+    
+    .headline-container h2 {
+        font-size: 1em;
+    }
+    
+    header nav ul li {
+        font-size: 1.5em;
+    }
+
+    
+    #badge1 {
+        height: 100px;
+        width: auto;
+        margin-bottom: 1em;
+        margin-right: 0;
+    }
+    
+    #real-estate-haus-logo {
+        width: 50%;
+        height: auto;
+        margin: 0em 1em;
+    }
+    
+    #badge2 {
+        display: none;
+    }
+    
+    .main-CPRES h3 p {
+        font-size: 1.35em;
+    }
+    
+    .services-container p {
+        font-size: 1em;
+    }
+    
+    footer {
+        font-size: .75em;
+        margin-bottom: 4em;
+        justify-content: center;
+        text-align: center;
+    }
+
+    footer p {
+       width: 100%;
+    }
+}
+
+@media only screen and (max-width: 572px) {
+    header .headline-container h1 {
+        font-size: 1.75em;
+        margin-bottom: 1em
+    }
+    header .headline-container h2 {
+        font-size: .75em;
+    }
+
+    header nav ul li a {
+        font-size: .75em;
+    }
+
+    #section-title{
+        font-size: 2rem;
+    }
+
+    #returnTop .icon-link {
+        font-size: 0.75rem;
+    }
+
+    #badge1 {
+        margin: 0;
+        width: 20%;
+        height: auto;
+    }
+
+    #real-estate-haus-logo {
+        width: 75%;
+        height: auto;
+        border: none;
+    }
+
+    .agent-card:last-child {
+        margin-bottom: 0em;
+    }
+
 }

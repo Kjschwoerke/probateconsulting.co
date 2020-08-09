@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Probate Consulting in New Braunfels, TX by Certified Probate Specialists">
+    <meta name="description" content="Probate Consulting in New Braunfels, TX by Certified Probate Real Estate Specialists">
     <meta name="keywords" content="Probate, Consulting, Texas, New Braunfels, Gruene, Green, Real Estate, Estate, Real Estate Haus, Realtor, Realtors, Canyon Lake, River Chase, Haven Wood, Probate Specialists, Probate Experts, Certified Probate Specialist, Certified Probate Expert">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
 
+    <!-- Links to Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon-16x16.png">
+    <link rel="manifest" href="./Images/site.webmanifest">
     <!-- Link to CSS Style Sheets -->
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" media="screen and (max-width: 1163px)" href="./tablet-style.css">
-    <link rel="stylesheet" media="screen and (max-width: 500px), (max-height: 400px)" href="./mobile-style.css">
-    
-
+   
     <title>Probate Consulting</title>
 </head>
 <body>
   <header id="top">
     <nav>
       <ul>
-        <li><a href='#services'>Services</a></li>
-        <li><a href='#contact'>Our Experts</a></li>
+        <li><a id="specialistsLink" tabindex = "0" href='#contact'>Our Specialists</a></li>
+        <li><a id="ContactLink" tabindex = "0" href='#services'>Our Services</a></li>
       </ul>
 
-      <a id='returnTop' class='returnTop' href="#top">
-        Click to Return to the Top of the Page
+      <a tabindex = "0" id='returnTop' class='returnTop' href="#top">
+        <div class="icon-link">
+          <i class="fa fa-home" id="home-icon" aria-hidden="true"></i>
+          Click to Return to the Top of the Page
+        </div>
       </a>
     </nav>
 
     <div class="headline-container">
-      <h1>Certified Probate Specialists</h1>
+      <h1>Texas Certified Probate Real Estate Specialists</h1>
       <h2>Expert Guidance for your Real Estate concerns
-        specializing in New Braunfels, Gruene, and Canyon Lake</h2>
+        specializing in <strong>New Braunfels</strong>, <strong>Gruene</strong>, and <strong>Canyon Lake</strong></h2>
     </div>
   </header>
 
@@ -42,105 +48,153 @@
   </div>
 
   <main>
-    <section id="services" class="services">
-      <div class="main-CPRES">
-        <h3>
-            We are Certified Probate Real Estate Specialists. 
-            <br> 
-            You can learn more about us and our services below or by calling one of our experts.
-        </h3>  
-      </div>
-  
-      <div class="services-container">
-        <p> 
-          We assist administrators and executors with the sale of any real 
-          estate properties that the estate has to liquidate. 
-        </p>
-        <p>
-          We work with investors and buyers to make this sale quickly, often within 30 days or less. 
-          <br>
-          This can save you time and could save the estate from paying extra attorney fees, property taxes, and insurance. 
-          <br>
-          Our Title Company partner can assist you in getting letters of testimentary, heirship affidavits and run a title search.
-        </p>
-        <p>
-          We can also help guide you to great subcontractors who can assist you with anything from re-keying the home to making any repairs .
-        </p>
-        <p>
-          Additionally we can assist you in interviewing an estate sale company, if you need to liquidate the contents of the home.
-        </p>
-      </div>
-
-      <div class="probate-timeline">
-        <h4 class="probate-timeline-title">Estate Executor's Duties During The Probate Process</h4>
-        <figure>
-          <a href = "./Images/Magazine_Layout_FlowChart_web.pdf"  target = "_blank">
-            <img src="./Images/Flowchart-outlines.svg" alt="Graphical Representation of Probate Flowchart Highlighting Services">
-          </a>
-          <figcaption>
-            Highlighted areas are where we can help!
-          </figcaption>
-        </figure>
-        
-      </div>
-
-    </section>
-    
-
-    
 
     <section id='contact' class="contact-us">
-      <h3 class="our-specialists">Certified Probate Specialists</h3>
+      <h3 id="section-title" class="our-specialists">Our Specialists</h3>
 
       <p>
-        Call one of our certified experts below so we can start helping you!
+        Call one of our <strong>Texas Certified Probate Real Estate Specialists</strong> so we can start helping you!
       </p>
 
       <div class="contact-container">
 
         <div class="agent-card" id='henderson'>
-          <img src="./Images/Henderson.jpg" alt= "Woman: Caroline Nunez Realtor/Associate Professional Portrait on simple background">
+          <img src="./Images/Henderson1.jpg" alt= "Woman: Caroline Nunez Realtor/Associate Professional Portrait on simple background">
           <div class="name">
             <h5 class="agent-name">Whitney Henderson</h5>
-            <p>Realtor/Associate</p>
+            <p class = "title">Realtor/Associate</p>
           </div>
-          <div class="phone">
-            Cell: (832) 493-2868
+          <div class="phoneEmailContainer">
+            <div class="phone">
+              Cell: (832) 493-2868
+            </div>
+            <div class="email"><a tabindex = "0" href="mailto: whitney@realestatehaus.com">whitney@probateconsuting.info</a>
+            </div>
           </div>
         </div>
 
         <div class="agent-card" id='baltera'>
-          <img src="./Images/Baltera.jpeg" alt="Woman: Donna T. Baltera Broker/Owner Professional Portrait on simple background">
+          <img src="./Images/Baltera1.jpg" alt="Woman: Donna T. Baltera Broker/Owner Professional Portrait on simple background">
           <div class="name">
             <h4 class="agent-name">Donna T. Baltera</h4>
-            <p>Broker/Owner 
-              <br>
-              Providing "Donnamite" Service
-            </p>
+            <div class = "title donnaTitle">
+              <p>
+                Broker/Owner 
+              </p>
+              <p>
+                Providing "Donnamite" Service
+              </p>
+            </div>
           </div>
-          <div class="phone">
-            Cell: (713) 822-2009
+          <div class="phoneEmailContainer">
+            <div class="phone">
+              Cell: (713) 822-2009
+            </div>
+            <div class="email"><a tabindex = "0" href="mailto: donna@probateconsulting.info">donna@probateconsulting.info</a>
+            </div>
           </div>
         </div>
 
         <div class="agent-card" id='nunez'>
-          <img src="./Images/Nunez.jpg" alt="Woman: Carolyn Nunez Realtor/Associate Professional Portrait on simple background">
+          <img src="./Images/Nunez1.jpg" alt="Woman: Carolyn Nunez Realtor/Associate Professional Portrait on simple background">
           <div class="name">
             <h5 class="agent-name">Carolyn Nunez</h5>
-            <p>Realtor/Associate</p>
+            <p class = "title">Realtor/Associate</p>
           </div>
-          <div class="phone">
-            Cell: (713) 504-5198
+          <div class="phoneEmailContainer">
+            <div class="phone">
+             Cell: (713) 504-5198
+            </div>
+            <div class="email"><a tabindex = "0" href="mailto: carolyn@probateconsuting.info">carolyn@probateconsuting.info</a>
           </div>
         </div>
       </div>
+    </div>
+
+      <div class="more-info">
+        <p>Call now for more information about how we can help you!</p>
+      </div>
+
     </section>
 
+    <section id="services" class="services">
+      <div class="main-CPRES">
+        <h3 id = "section-title">
+           Our Services 
+        </h3>  
+      </div>
+  
+      <div class="services-container">
+        <p class = "services-container-text">
+          As <strong>Certified Probate Real Estate Specialists</strong> we can:
+          <br> 
+          Assist administrators and executors with the sale of any real estate properties that the estate has to liquidate. 
+          <br>
+          Additionally we can assist you in interviewing an estate sale company, if you need to liquidate the contents of the home.
+          <br>
+          Furthermore we can help save you time and money, and ease your responsibilities.
+        </p>
+
+        <!-- Create Service Highlight Cards Here -->
+        <div class="service-cards-container">
+
+          <div class="service-card time-card">
+          <div class="card-icon">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+          </div>
+          <h4 class = "card-heading">Time</h4>
+          <p class = "card-text">We work with Investors.</p>
+          <p class = "card-text">We work Buyers.</p>
+          <p class = "card-text">We make the sale quickly, often within 30 days or less.</p>
+
+          <p class = "card-text sub-text">This can mean significant savings in your time!</p>
+        </div>
+
+        <div class="service-card money-card">
+          <div class="card-icon">
+            <i class="fa fa-money" aria-hidden="true"></i>
+          </div>
+          <h4 class = "card-heading">Money</h4>
+          <p class = "card-text">Save on Attorney Fees</p>
+          <p class = "card-text">Save on Taxes</p>
+          <p class = "card-text">Save on Insurance</p>
+
+          <p class = "card-text sub-text">Saved time can mean significant savings in your money!</p>
+        </div>
+
+        <div class="service-card time-card">
+          <div class="card-icon">
+            <i class="fa fa-gavel" aria-hidden="true"></i>
+
+          </div>
+          <h4 class = "card-heading">Legal</h4>
+          <p class = "card-text">Assist with Title Searches</p>
+          <p class = "card-text">Assist with "Letters of Testamentary"</p>
+          <p class = "card-text">Assist with "Heirship Affidavits"</p>
+
+          <p class = "card-text sub-text">Assist in navigating legal and title issues!</p>
+        </div>
+
+        <div class="service-card time-card">
+          <div class="card-icon">
+            <i class="fa fa-users" aria-hidden="true"></i>
+          </div>
+          <h4 class = "card-heading">Resources</h4>
+          <p class = "card-text">Connect with reputable 
+          <br>Sub-Contractors.</p>
+          <p class = "card-text">Assist in Repairs</p>
+          <p class = "card-text">Assist in Maintanince</p>
+
+          <p class = "card-text sub-text">Reduce stress related to repairs, and maintanice!</p>
+        </div>
+        </div>
+    </section>
+    
   <footer>
     <p>
       Site Design 2020: Kenneth Schwoerke
       <br>
-      KJSchwoerke, LLC, for Real Estate Haus
+      KJSchwoerke, LLC, for <strong><a tabindex = "0" id="linkToRealEstateHaus" href="https://realestatehaus.com/" target="_blank">Real Estate Haus</a></strong>
     </p>
   </footer>
 
